@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import NavLiLink from "./nav_li_link";
-
+import { useSelector } from "react-redux";
+import { selectUsersLength } from "../reducers/users/users_slice";
 export default function Nav() {
+  const usersLength = useSelector(selectUsersLength);
   return (
-    <nav className="navbar navbar-inverse">
+    <nav className="navbar navbar-default">
       <div className="container-fluid">
         <div className="navbar-header">
           <button
@@ -22,8 +24,10 @@ export default function Nav() {
         </div>
         <div className="collapse navbar-collapse" id="myNavbar">
           <ul className="nav navbar-nav">
-            <NavLiLink to={"/"}>Todos</NavLiLink>
-            <NavLiLink to={"/users"}>Users</NavLiLink>
+            <NavLiLink to={"/"}>
+              Users <span style={{ color: "#444" }}>{usersLength}</span>
+            </NavLiLink>
+            {/* <NavLiLink to={":userId"}>Todos</NavLiLink> */}
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <NavLiLink to={"#"}>

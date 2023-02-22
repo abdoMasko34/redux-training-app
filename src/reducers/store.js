@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import todosReducer from "./todos/task_slice";
+import todosReducer from "./todos/todos_slice";
 import usersReducer from "./users/users_slice";
 
 export default configureStore({

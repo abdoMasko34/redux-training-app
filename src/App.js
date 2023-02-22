@@ -7,9 +7,9 @@ import Users from "./components/users/users";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Todos />}></Route>
-        <Route path="users" element={<Users />}></Route>
+      <Route path={"/"} element={<Layout />}>
+        <Route index element={<Users />}></Route>
+        <Route path={":userId/todos"} element={<Todos />}></Route>
       </Route>
     </Routes>
   );
