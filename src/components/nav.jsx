@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import NavLiLink from "./nav_li_link";
 import { useSelector } from "react-redux";
 import { selectUsersLength } from "../reducers/users/users_slice";
+import { logout } from "../reducers/auth_slice";
 export default function Nav() {
   const usersLength = useSelector(selectUsersLength);
   return (
@@ -30,10 +31,10 @@ export default function Nav() {
             {/* <NavLiLink to={":userId"}>Todos</NavLiLink> */}
           </ul>
           <ul className="nav navbar-nav navbar-right">
-            <NavLiLink to={"#"}>
-              <i className="glyphicon glyphicon-user"></i> Sign Up
+            <NavLiLink to={"#"} onClick={logout()}>
+              <i className="glyphicon glyphicon-user"></i> Logout
             </NavLiLink>
-            <NavLiLink to={"#"}>
+            <NavLiLink to={"login"}>
               <i className="glyphicon glyphicon-log-in"></i> Login
             </NavLiLink>
           </ul>

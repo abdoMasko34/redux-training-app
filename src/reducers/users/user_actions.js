@@ -8,7 +8,7 @@ import {
 } from "./users_slice";
 import axios from "axios";
 
-const userService = axios.create({
+export const userService = axios.create({
   baseURL: "https://gorest.co.in/public/v2/users",
   headers: {
     "Content-Type": "application/json",
